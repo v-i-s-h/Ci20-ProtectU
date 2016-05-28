@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+    <head>
+        <title>Ci20 Protect U</title>
+        <style type="text/css">
+            .style1
+            {
+                width: 75%;
+            }
+        </style>
+		<script>
+            var xmlhttp; 
+            xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if( (xmlhttp.readyState == 4) && (xmlhttp.status == 200) ) {
+                    console.log( xmlhttp.responseText )
+                }
+            }
+            function sendCommand( cmdButton ) {
+                xmlhttp.open( "GET", "./"+cmdButton.value, true );
+                xmlhttp.send();
+            }
+        </script>
+    </head>
+    <body>
+
+        <table align="center" class="style1">
+            <tr>
+                <td colspan="2" style="text-align: center">
+					<img src="http://192.168.1.194:8080/?action=stream"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input id="cmdFwd" type="button" value="FWD" onclick="sendCommand(this)"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: center">
+                    <input id="cmdLft" type="button" value="LFT" onclick="sendCommand(this)"/>
+                </td>
+                <td style="text-align: center">
+                    <input id="cmdRgt" type="button" value="RGT" onclick="sendCommand(this)"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input id="cmdBck" type="button" value="BCK" onclick="sendCommand(this)" />
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
