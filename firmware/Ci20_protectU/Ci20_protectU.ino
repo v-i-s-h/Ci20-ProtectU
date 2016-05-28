@@ -134,13 +134,13 @@ void setup()
   // Stop the bot  
   bot_stop();
   
-  analogWrite( motorL_pwm, 70 );
-  analogWrite( motorR_pwm, 140 );
-  forward();  delay( 2500 );  bot_stop();
+  // analogWrite( motorL_pwm, 70 );
+  // analogWrite( motorR_pwm, 140 );
+  // forward();  delay( 1000 );  bot_stop();
   
-  analogWrite( motorL_pwm, 140 );
-  analogWrite( motorR_pwm, 70 );
-  forward();  delay( 2500 );  bot_stop();
+  // analogWrite( motorL_pwm, 140 );
+  // analogWrite( motorR_pwm, 70 );
+  // forward();  delay( 1000 );  bot_stop();
   
   analogWrite( motorL_pwm, lmPwmVal );
   analogWrite( motorR_pwm, rmPwmVal );
